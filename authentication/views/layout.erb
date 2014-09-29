@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>User Authentication Example</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+  </head>
+  <body>
+    <div id="page">
+      <header id="site-header">
+        <h1><a href="/">User Authentication Example</a></h1>
+        <nav>
+          <ol class="nav-links">
+            <% if user_signed_in? %>
+              <li>
+                <a href="/sessions/sign_out">Sign Out</a>
+              </li>
+              <li>
+                Signed in as
+                <span class="user-email"><%= current_user.email %></span>
+              </li>
+            <% else %>
+              <li>
+                <a href="/sessions/new">Sign In</a>
+              </li>
+              <li>
+                <a href="/users/new">Create Account</a>
+              </li>
+            <% end %>
+          </ol>
+        </nav>
+      </header>
+      <div id="main-content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

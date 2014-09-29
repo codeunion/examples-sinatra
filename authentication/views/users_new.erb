@@ -1,0 +1,35 @@
+<article id="users-new-page">
+  <h2>Create Account</h2>
+
+  <% if user.errors.any? %>
+    <div class="form-errors">
+      <h3>Ut oh! There were some errors.</h3>
+      <ul class="error-messages">
+        <% user.errors.full_messages.each do |error_msg| %>
+          <li><%= error_msg %></li>
+        <% end %>
+      </ul
+    </div>
+  <% end %>
+
+  <form id="create-account-form" class="horizontal-form"
+        method="POST" action="/users">
+
+    <label for="user-email">Email</label>
+
+    <input id="user-email" type="text" name="user[email]"
+           placeholder="you@example.com" value="<%= user.email %>">
+
+    <label for="user-password">Password</label>
+
+    <input id="user-password" type="password" name="user[password]">
+
+    <label for="user-password-confirm">Confirm Password</label>
+
+    <input id="user-password-confirm" type="password"
+           name="user[password_confirmation]">
+
+
+    <button type="submit">Create Account</button>
+  </form>
+</article>
