@@ -1,0 +1,28 @@
+<article id="page-photos-new">
+  <h2>Upload a Photo</h2>
+
+  <% if photo.errors.any? %>
+    <div class="form-errors">
+      <h3>Ut oh! There were some errors.</h3>
+      <ul class="error-messages">
+        <% photo.errors.full_messages.each do |error_msg| %>
+          <li><%= error_msg %></li>
+        <% end %>
+      </ul
+    </div>
+  <% end %>
+
+  <form method="POST" action="/photos" enctype="multipart/form-data"
+        class="horizontal-form">
+
+    <label for="photos-title">Photo Title</label>
+    <input id="photos-title" name="photo[title]"
+      type="text" value="<%= photo.title %>"
+      placeholder="e.g., Vacation in Alaska">
+
+    <label for="photos-source">File</label>
+    <input id="photos-source" name="photo[source]" type="file">
+
+    <button type="submit">Upload Photo</button>
+  </form>
+</article>
