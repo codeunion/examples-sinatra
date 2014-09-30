@@ -5,11 +5,11 @@ implemented with the Sinatra framework.
 
 ## Current Examples
 
-### User Authentication
+### [User Authentication](authentication)
 
 The `authentication` directory contains an example Sinatra application that implements basic user authentication, i.e., signing up, logging in, and logging out.
 
-### Public File Upload
+### [Public File Upload](public-file-upload)
 
 The `public-file-upload` directory contains an example Sinatra application that implements a basic photo gallery to demonstrate how file uploading and manipulation works.  It saves the files in the `public/photos` directory, which means it won't work on Heroku since Heroku has a read-only file system.
 
