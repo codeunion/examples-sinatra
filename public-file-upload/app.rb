@@ -1,8 +1,6 @@
-require "./environment"
+require "sinatra"
 
-before do
-  puts "  --- Params: #{params.inspect}"
-end
+require "./environment"
 
 helpers do
   # e.g., time_with_zone(photo.created_at, "America/Los_Angeles")
