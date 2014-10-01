@@ -1,0 +1,32 @@
+## Specific to our application:
+/public/photos/
+
+## Specific to OS X:
+.DS_Store
+
+## Specific to Ruby web applications:
+.env
+*.db
+
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+## Documentation cache and generated files:
+/.yardoc/
+/_yardoc/
+/doc/
+/rdoc/
+
+## Environment normalisation:
+/.bundle/
+/lib/bundler/man/
+
+.rvmrc

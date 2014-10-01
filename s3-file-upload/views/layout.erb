@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Photo Upload Example</title>
+    <link rel="stylesheet" type="text/css" href="/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+  </head>
+  <body>
+    <div id="page">
+      <header id="site-header">
+        <h1><a href="/">Photo Upload Example</a></h1>
+        <nav>
+          <ol class="nav-links">
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/photos/new">Add Photo</a>
+            </li>
+          </ol>
+        </nav>
+      </header>
+      <div id="main-content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

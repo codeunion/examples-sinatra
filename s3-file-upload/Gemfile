@@ -1,0 +1,54 @@
+source "https://rubygems.org"
+
+# Sinatra is a minimal framework for building Ruby web applications
+# <https://github.com/sinatra/sinatra>
+gem "sinatra"
+
+# DataMapper library for interacting with a SQL database
+# <http://datamapper.org/>
+gem "data_mapper"
+
+# Ruby library for implementing the bcrypt key derivation function. Used for
+#   securely implementing passwords.
+# <https://github.com/codahale/bcrypt-ruby>
+gem "bcrypt"
+
+# CarrierWave library handling file uploads
+# <https://github.com/carrierwaveuploader/carrierwave>
+gem "carrierwave"
+
+# DataMapper support for CarrierWave
+# <https://github.com/carrierwaveuploader/carrierwave-datamapper>
+gem "carrierwave-datamapper"
+
+# AWS support for CarrierWave
+# <https://github.com/sorentwo/carrierwave-aws>
+gem "carrierwave-aws"
+
+# MiniMagick library for image manipulation (resizing, cropping, etc.)
+# <https://github.com/minimagick/minimagick>
+gem "mini_magick"
+
+group :development do
+  # We use SQLite3 on our local machines
+  gem "sqlite3"
+  gem "dm-sqlite-adapter"
+
+  # Dotenv library for managing application-specific environmental variables
+  # <https://github.com/bkeepers/dotenv>
+  gem "dotenv"
+
+  # Rerun will restart your application automatically when a file changes.
+  # <https://github.com/alexch/rerun>
+  gem "rerun"
+end
+
+group :production do
+  # PostgreSQL library for Ruby
+  # <https://bitbucket.org/ged/ruby-pg>
+  gem "pg"
+
+  # DataMapper support for PostgreSQL
+  # <https://github.com/datamapper/dm-postgres-adapter>
+  gem "dm-postgres-adapter"
+end
