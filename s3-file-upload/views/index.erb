@@ -1,0 +1,25 @@
+<article id="page-index">
+  <h2>Photos!</h2>
+
+  <% if photos.empty? %>
+    <h3>Nobody's uploaded any photos (yet).</h3>
+    <p>
+      Visit the <a href="/photos/new">photo uploads page</a> to be the first.
+    </p>
+  <% else %>
+    <ol class="photo-list">
+      <% photos.each do |photo| %>
+        <li>
+          <div class="photo-container">
+            <a class="photo-title" href="/photos/<%= photo.id %>">
+              <%= photo.title %>
+            </a>
+            <a href="/photos/<%= photo.id %>">
+              <img class="photo-thumb" src="<%= photo.thumb_url %>">
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</article>

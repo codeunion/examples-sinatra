@@ -1,0 +1,12 @@
+<article id="page-photos-show">
+  <div class="photo-container-full">
+    <h2 class-"photo-title"><%= photo.title %></h2>
+    <div class="photo-info">
+      Taken on
+      <span class="photo-date"><%= format_time_with_zone(photo.created_at, 'America/Los_Angeles') %></span>. [<a href="<%= photo.original_url %>" target="_blank" download>Download Original</a>]
+    </div>
+    <a href="<%= photo.original_url %>" target="_blank">
+      <img class="photo-image" src="<%= photo.full_url %>">
+    </a>
+  </div>
+</article>
