@@ -1,3 +1,5 @@
+require "sinatra"
+
 # We point DataMapper to the correct database in setup.rb
 require "./setup"
 
