@@ -4,6 +4,26 @@ This example Sinatra application implements a basic photo gallery to demonstrate
 
 Rather than storing the files in the `public` directory, this application integrates with [Amazon's Simple Storage Service](http://aws.amazon.com/s3/) (aka Amazon S3).  This application will need information about your Amazon Web Services (AWS) account in order to upload files successfully.  See below for how to do this.
 
+## Installing ImageMagick
+
+We use the MiniMagick gem to resize, crop, etc. our uploaded photos which uses the [ImageMagick](http://en.wikipedia.org/wiki/ImageMagick) program to do its work.  That means we need to make sure we have ImageMagick installed.
+
+### On Cloud9
+
+To install ImageMagick on Cloud9, run
+
+```text
+$ sudo apt-get install ImageMagick
+```
+
+### On OS X
+
+To install ImageMagick on OS X using [homebrew](http://brew.sh/), run
+
+```text
+$ brew install ImageMagick
+```
+
 ## Running The Application
 
 Make sure you're in the `public-file-upload` directory.  Once there, run the following two commands to configure your application correctly:
