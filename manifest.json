@@ -1,0 +1,10 @@
+{
+  "category": "example",
+  "tags": [
+    "ruby",
+    "sinatra",
+    "authentication",
+    "file-uploading"
+  ],
+  "notes": "Incomplete. Missing 3 listed example applications."
+}
