@@ -25,6 +25,7 @@ post("/chirps") do
   chirp = Chirp.create(params[:chirp])
 
   if chirp.saved?
+    flash[:notice] = "New chirp created!"
     redirect("/")
   else
     flash[:errors] = chirp.errors.full_messages
