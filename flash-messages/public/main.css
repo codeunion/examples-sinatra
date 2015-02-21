@@ -43,15 +43,22 @@
   margin-right: 20px;
 }
 
+#flash-notice {
+  color: #fff;
+  background-color: #0e0;
+  padding: 8px;
+}
+
 .chirps blockquote {
-  font-size 1.4em;
   margin-left: 0;
-  padding-left: 1em;
-  border-left: 0.3em solid #aaa;
+  padding-left: 12px;
+  border-left: 4px solid #aaa;
 }
 
 .form-errors .error-messages {
-  color: #e00;
+  color: #fff;
+  background-color: #e00;
+  padding: 8px;
 }
 
 .horizontal-form {
