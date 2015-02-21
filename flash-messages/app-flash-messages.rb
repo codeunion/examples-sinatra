@@ -22,7 +22,7 @@ end
 
 get("/chirps/new") do
   chirp = Chirp.new
-  erb(:chirp_new, :locals => { :chirp => chirp })
+  erb(:chirp_new)
 end
 
 post("/chirps") do
