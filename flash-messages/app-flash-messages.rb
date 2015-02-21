@@ -6,9 +6,13 @@ require "./setup"
 # models.rb is where we define our Chirp model
 require "./models"
 
+# To use flash messages, we need to require the Flash middleware
 require 'rack-flash'
 
+# Because flash middleware uses sessions, we need to enable sessions
 enable :sessions
+
+# Finally, to enable the `flash` method we add Rack::Flash to our middleware
 use Rack::Flash
 
 get("/") do
@@ -25,9 +29,12 @@ post("/chirps") do
   chirp = Chirp.create(params[:chirp])
 
   if chirp.saved?
+    # When the chirp is saved successfully, show a nice congratulatory message!
     flash[:notice] = "New chirp created!"
     redirect("/")
   else
+    # If the chirp wasn't saved, add the error messages to flash so that the
+    # user can correct their mistakes the next time around.
     flash[:errors] = chirp.errors.full_messages
     redirect("/chirps/new")
   end
