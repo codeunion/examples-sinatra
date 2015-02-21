@@ -43,6 +43,13 @@
   margin-right: 20px;
 }
 
+.chirps blockquote {
+  font-size 1.4em;
+  margin-left: 0;
+  padding-left: 1em;
+  border-left: 0.3em solid #aaa;
+}
+
 .form-errors .error-messages {
   color: #e00;
 }
