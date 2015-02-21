@@ -7,7 +7,7 @@ require "./setup"
 require "./models"
 
 # To use flash messages, we need to require the Flash middleware
-require 'rack-flash'
+require "rack-flash"
 
 # Because flash middleware uses sessions, we need to enable sessions
 set(:sessions, true)
