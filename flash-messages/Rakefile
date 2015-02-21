@@ -28,6 +28,9 @@ namespace :setup do
     puts "Copying env.example to .env..."
 
     FileUtils.cp("env.example", ".env")
+    File.open(".env", "a+") do |f|
+      f.puts "SESSION_SECRET=#{SecureRandom.hex(64)}"
+    end
   end
 end
 

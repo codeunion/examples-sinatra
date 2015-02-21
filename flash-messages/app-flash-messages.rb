@@ -10,7 +10,10 @@ require "./models"
 require 'rack-flash'
 
 # Because flash middleware uses sessions, we need to enable sessions
-enable :sessions
+set(:sessions, true)
+
+# Make sure to use a session secret!
+set(:session_secret, ENV["SESSION_SECRET"])
 
 # Finally, to enable the `flash` method we add Rack::Flash to our middleware
 use Rack::Flash
