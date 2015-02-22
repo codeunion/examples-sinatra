@@ -6,17 +6,29 @@ require "./setup"
 # models.rb is where we define our Chirp model
 require "./models"
 
-# Because flash middleware uses sessions, we need to enable sessions
+# In order to roll our own flash functionality, we need to use sessions.
+# Sessions allow us to store values on a per-user basis, creating pseudo-state
+# in an inherently stateless protocol (HTTP).
 set(:sessions, true)
 
-# Make sure to use a session secret!
+# A session secret is used to authenticate sessions and keep your user's
+# information secure. Because this secret is critical for security, it should
+# not be tracked in version control. If you used `rake setup:dotenv` you will
+# see a SESSION_SECRET environment variable in the .env file.
 set(:session_secret, ENV["SESSION_SECRET"])
 
 helpers do
+  # Retrieve (and delete) an item from the "flash" hash.
+  #
+  # Be careful how you use this! Calling it once will return the value at
+  # `session[:flash][key]` AND will delete it from `session[:flash]`.
   def get_flash(key)
-    session[:flash] && session[:flash].delete(key)
+     session[:flash].delete(key) if session[:flash]
   end
 
+  # Add a value to the "flash" hash.
+  #
+  # Store arbitrary values to be used _once_ in a subsequent request.
   def set_flash(key, value)
     session[:flash] ||= {}
     session[:flash][key] = value
