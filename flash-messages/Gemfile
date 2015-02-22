@@ -12,9 +12,3 @@ group :development do
   gem "dotenv"
   gem "rerun"
 end
-
-group :production do
-  # We use PostgreSQL on Heroku, not SQLite3
-  gem "pg"
-  gem "dm-postgres-adapter"
-end
