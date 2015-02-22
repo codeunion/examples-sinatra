@@ -1,0 +1,24 @@
+<section id="chirps-new-page">
+  <h2>Write a Chirp</h2>
+
+  <% if errors = get_flash(:errors) %>
+    <div class="form-errors">
+      <h3>Uh oh! There were some errors.</h3>
+      <ul class="error-messages">
+        <% errors.each do |error_msg| %>
+          <li><%= error_msg %></li>
+        <% end %>
+      </ul
+    </div>
+  <% end %>
+
+  <form id="create-chirp-form" class="horizontal-form"
+        method="POST" action="/chirps">
+
+    <label for="chirp-text">Text</label>
+
+    <textarea id="chirp-text" name="chirp[text]">Share your thoughts!</textarea>
+
+    <button type="submit">Create Chirp</button>
+  </form>
+</section>

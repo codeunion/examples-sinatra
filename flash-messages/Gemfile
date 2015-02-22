@@ -1,0 +1,13 @@
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "data_mapper"
+
+group :development do
+  # We use SQLite3 on our local machines
+  gem "sqlite3"
+  gem "dm-sqlite-adapter"
+
+  gem "dotenv"
+  gem "rerun"
+end

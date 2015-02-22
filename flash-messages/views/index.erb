@@ -1,0 +1,15 @@
+<article id="index-page">
+  <h3>Chirps</h3>
+  <div class="chirps">
+  <% if chirps.empty? %>
+    <p>
+      There are no chirps! Why not go write one?
+      <a href="/chirps/new">Create a new chirp</a>?
+    </p>
+  <% else %>
+    <% chirps.each do |chirp| %>
+      <blockquote><%= chirp.text %></blockquote>
+    <% end %>
+  <% end %>
+  </div>
+</article>
