@@ -68,8 +68,6 @@ GEM
       rb-inotify (>= 0.9)
     multi_json (1.10.1)
     rack (1.5.2)
-    rack-flash3 (1.0.5)
-      rack
     rack-protection (1.5.3)
       rack
     rb-fsevent (0.9.4)
@@ -94,7 +92,6 @@ DEPENDENCIES
   data_mapper
   dm-sqlite-adapter
   dotenv
-  rack-flash3
   rerun
   sinatra
   sqlite3

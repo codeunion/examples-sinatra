@@ -20,9 +20,9 @@
         </nav>
       </header>
       <div id="main-content">
-        <% if flash[:notice] %>
+        <% if notice = get_flash(:notice) %>
           <div id="flash-notice">
-            <%= flash[:notice] %>
+            <%= notice %>
           </div>
         <% end %>
 

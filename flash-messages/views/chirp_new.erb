@@ -1,11 +1,11 @@
 <section id="chirps-new-page">
   <h2>Write a Chirp</h2>
 
-  <% if flash[:errors] %>
+  <% if errors = get_flash(:errors) %>
     <div class="form-errors">
       <h3>Uh oh! There were some errors.</h3>
       <ul class="error-messages">
-        <% flash[:errors].each do |error_msg| %>
+        <% errors.each do |error_msg| %>
           <li><%= error_msg %></li>
         <% end %>
       </ul
