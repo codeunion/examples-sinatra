@@ -29,7 +29,7 @@ The `flash-messages` directory contains an example Sinatra application that impl
 
 For example, if you try to login but enter the wrong password, you could use a "flash" to display an error message after redirecting to the login page.
 
-This application uses a custom implementation of a "flash" behavior on top of the `session` method. It is inspired by the [rack-flash](https://github.com/treeder/rack-flash) and Rails' [ActionDispatch::Flash](http://api.rubyonrails.org/classes/ActionDispatch/Flash.html).
+This application uses a custom implementation of a "flash" behavior on top of [Sinatra's `session` feature](http://www.sinatrarb.com/intro.html#Using%20Sessions). It is inspired by the [rack-flash](https://github.com/treeder/rack-flash) and Rails' [ActionDispatch::Flash](http://api.rubyonrails.org/classes/ActionDispatch/Flash.html).
 
 ### Facebook Login (Coming Soon)
 
