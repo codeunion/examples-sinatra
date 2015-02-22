@@ -23,6 +23,14 @@ However, rather than saving the files to the `public/photos` directory, this app
 
 You will have to sign up for an [Amazon Web Services (AWS) account](https://aws.amazon.com) in order to do this.
 
+### [Flash Messages](flash-messages)
+
+The `flash-messages` directory contains an example Sinatra application that implements a common feature in web applications: displaying a temporary message about the results of a previous HTTP request.
+
+For example, if you try to login but enter the wrong password, you could use a "flash" to display an error message after redirecting to the login page.
+
+This application uses a custom implementation of a "flash" behavior on top of the `session` method. It is inspired by the [rack-flash](https://github.com/treeder/rack-flash) and Rails' [ActionDispatch::Flash](http://api.rubyonrails.org/classes/ActionDispatch/Flash.html).
+
 ### Facebook Login (Coming Soon)
 
 ### Sending Email (Coming Soon)
