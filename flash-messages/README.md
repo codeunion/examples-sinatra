@@ -27,7 +27,7 @@ Flash messages are useful for addressing a variety of situations where you need 
 
 ## Running The Application
 
-Make sure you're in the `public-file-upload` directory.  Once there, run the following two commands to configure your application correctly:
+Make sure you're in the `flash-messages` directory.  Once there, run the following two commands to configure your application correctly:
 
 ```text
 $ bundle install --without production
