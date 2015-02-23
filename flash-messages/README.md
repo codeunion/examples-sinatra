@@ -25,6 +25,8 @@ Flash messages are useful for addressing a variety of situations where you need 
 - Showing a welcome message after logging in
 - Displaying a confirmation message when a user action is successful
 
+Look at the code in `app-flash-messages.rb` to see the custom "flash" behavior built on top of [Sinatra's `session` feature](http://www.sinatrarb.com/intro.html#Using%20Sessions). This feature is inspired by the [rack-flash](https://github.com/treeder/rack-flash) and Rails' [ActionDispatch::Flash](http://api.rubyonrails.org/classes/ActionDispatch/Flash.html).
+
 ## Running The Application
 
 Make sure you're in the `flash-messages` directory.  Once there, run the following two commands to configure your application correctly:
