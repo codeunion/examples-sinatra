@@ -1,6 +1,6 @@
 # Flash Messages
 
-This example Sinatra application that implements a common feature in web applications: displaying a temporary message about the results of a previous HTTP request.
+This example Sinatra application implements a common feature in web applications: displaying a temporary message about the results of a previous HTTP request.
 
 A "flash" message is a temporary message that is passed from one request (A) to another (B), but disappears after the subsequent request (B) has been handled.
 
