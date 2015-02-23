@@ -1,6 +1,6 @@
 # Flash Messages
 
-This example Sinatra application that implements "flash" messages using [`Rack::Flash`](https://github.com/treeder/rack-flash).
+This example Sinatra application that implements a common feature in web applications: displaying a temporary message about the results of a previous HTTP request.
 
 A "flash" message is a temporary message that is passed from one request (A) to another (B), but disappears after the subsequent request (B) has been handled.
 
@@ -8,16 +8,16 @@ For example, if you have these routes:
 
 ```ruby
 get '/' do
-  flash[:my_message]
+  get_flash(:my_message)
 end
 
 post '/message' do
-  flash[:my_message] = 'Hello!'
+  set_flash(:my_message, 'Hello!')
   redirect '/'
 end
 ```
 
-You could send a `POST` request to `/message`, be redirected to `/`, and you receive a response with body `'Hello!'`. A subsequent `GET` request to `/` would _not_ have any values at `flash[:my_message]` though.
+You could send a `POST` request to `/message`, be redirected to `/`, and you receive a response with body `'Hello!'`. A subsequent `GET` request to `/` would _not_ return any value for `get_flash(:my_message)` though.
 
 Flash messages are useful for addressing a variety of situations where you need a message passed between requests. For example:
 
