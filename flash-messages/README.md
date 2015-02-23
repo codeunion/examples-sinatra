@@ -39,7 +39,7 @@ $ rake setup:dotenv
 If you're using [Cloud9](http://c9.io), run the application with
 
 ```
-$ rerun bundle exec ruby app-flash-messages.rb -p $PORT -o $IP
+$ rerun bundle exec rackup -p $PORT -o $IP
 ```
 
 ### On Your Own Computer
@@ -50,4 +50,4 @@ If you're on your own computer, run the application with
 $ rerun bundle exec rackup
 ```
 
-If everything runs successfully, you should be able to visit <http://localhost:4567> and see the web application.
+If everything runs successfully, you should be able to visit <http://localhost:9292> and see the web application.
