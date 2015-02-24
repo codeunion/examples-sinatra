@@ -76,6 +76,7 @@ GEM
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
+    rake (10.4.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -101,6 +102,7 @@ DEPENDENCIES
   dm-sqlite-adapter
   dotenv
   pg
+  rake
   rerun
   sinatra
   sqlite3

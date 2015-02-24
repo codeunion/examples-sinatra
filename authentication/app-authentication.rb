@@ -66,14 +66,15 @@ get("/sessions/new") do
 end
 
 post("/sessions") do
-  user = User.find_by_email(params[:email])
-
-  if user && user.valid_password?(params[:password])
+  user = User.find_by_credentials(params[:email], params[:password])
+  # Don't use `user.valid?` here. It deletes the errors set by `find_by_credentials!`
+  if user.errors.empty?
     sign_in!(user)
     redirect("/")
-  else
-    erb(:sessions_new, :locals => { :user => user })
+    return
   end
+
+  erb(:sessions_new, :locals => { :user => user })
 end
 
 get("/sessions/sign_out") do

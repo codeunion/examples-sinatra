@@ -23,18 +23,50 @@ class User
   attr_accessor :password_confirmation
   validates_length_of :password_confirmation, :min => 6
 
-  # Given a User object, check whether a given password matches
-  #   the password stored in the database.
-  def valid_password?(unhashed_password)
+
+  # Retrieves a user from the database based on credentials.
+  # Adds errors to user.errors.
+  # @param email <String> Email to look up
+  # @param password <String> Password
+  # @return <User>
+  def self.find_by_credentials(email, password)
+    user = find_by_email(email)
+    # If the user already has an error, adding the password errors is confusing.
+    user.validate_password!(password) if user.errors.empty?
+    user
+  end
+
+  # Finds a user by email address.
+  # Adds  user.errors[:general] When email cannot be found.
+  # @param email <String> email to find from database
+  # @return <User>
+  def self.find_by_email(email)
+    # Try to retrieve a user, otherwise create a new one (but don't save it!)
+    user = self.first(:email => email) || self.new({ email: email })
+    # Return the user we found, but move on if it's a new user.
+    return user if user.saved?
+
+    # Add an error saying we couldn't find a user!
+    user.errors.add(:general, "We couldn't find someone with that email and password. Could you double-check what you put in?")
+    # return the new user.
+    user
+  end
+
+  # Checks if a given matches the password stored in the database.
+  # Adds an error if not to user.errors[:password] if they do not match.
+  # @param unhashed_password <String> Password to compare against database
+  # @return <Boolean>
+  def validate_password!(unhashed_password)
     # Note: BCryptHash "overloads" the == operator, so we're actually
     #   comparing a BCrypt-hashed copy of unhashed_password to the hashed
     #   copy stored in our database.
-    self.password == unhashed_password
-  end
 
-  # A small helpers to find Users by email address
-  def self.find_by_email(email)
-    self.first(:email => email)
+    if self.password == unhashed_password
+      true
+    else
+      self.errors.add(:password, "The password entered doesn't match our records for that user.")
+      false
+    end
   end
 end
 
