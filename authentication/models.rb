@@ -8,12 +8,12 @@ class User
   property :id, Serial
 
   property :email, String,
-    :format   => :email_address,
-    :required => true,
-    :unique   => true,
-    :messages => {
-      :format => "You must enter a valid email address."
-    }
+  :format   => :email_address,
+  :required => true,
+  :unique   => true,
+  :messages => {
+    :format => "You must enter a valid email address."
+  }
 
   property :password, BCryptHash, :required => true
   validates_confirmation_of :password
